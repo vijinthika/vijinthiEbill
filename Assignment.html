@@ -1,0 +1,93 @@
+<!DOCTYPE Html>
+<Html>
+	<head>
+		<title>ElecticalBill</title>
+		<style>
+		body{
+		margin:150px;
+		background-image:url('photo3.JPG');
+		background-repeat:no-repeat;
+		background-size:cover;
+		background-attchment:fixed;
+		}
+		.a{
+		border-style:solid;
+		border-radius:20px;
+		border-width:10px;
+		padding-left:20px;
+		padding-top:20px
+		text-align:center;
+		font-size:200%;
+		}
+		.b{
+		font-size:25px;
+		}
+		</style>
+	</head>
+		<body >
+			<center><form Method="post" target="_self">
+				<h1 style="text=align:center;font-size:50px;color:solid black">Domestic Electicity Bill Calculate</h1>
+					<table class="a">
+						<tr>
+							<td><p align="right"><b>No of Units Used</b></p></td>
+							<td> <input type="Number" name="Number of unit" id="Eunit" size="20" style="width:100%; height:30px;" min="1"></td>
+							<td><b>&nbsp&nbspkWh</b></td>
+						</tr>
+						<tr> 	
+							<td colspan="2"  style="text-align:right;font-size:10px;"><b><input type="reset" value="Clear" style="width:30%; height:40px;font-size:25px;background-color:red;color:yellow"></b></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="right"><b><button type="button" name="button" onclick="Billfunction()"  style="width:40%; height:40px;font-size:15px;background-color:green;color:black;"><b>Calcutate My Bill</button></b></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center"><p><b>Your Bill amount is:<span id="BillAmount"></span>&nbsp&nbspRs</b></p></td>
+							<td></td>
+						</tr>
+					</table>
+				
+			</form>
+						
+						<table class="b">
+							<tr>
+								<td colspan="2"><a href="https://ceb.lk/bill-calculation-commercial/en" target="_blank">More Information on hoe my bill <br>is calculated</a></td>
+								<td align="right"><a href="https://roar.media/english/life/reports/electricity-bill-calculated-analysis" target="_blank">Go to CEB web site</a></td>
+							</tr>
+							<tr>
+								<td colspan="3" align="center"><b>Created by:Vjinthika Aingarathas</b></td>
+							</tr>
+						</table>
+</center>					
+			
+			<script>
+			function Billfunction()
+			{
+				let unit=document.getElementById("Eunit").value;
+				if(unit<=30)
+				{
+					document.getElementById("BillAmount").innerHTML=Number(unit)*7.85;	
+				}
+				else if(unit<=60)
+				{
+					document.getElementById("BillAmount").innerHTML=235.50+(Number(unit)-30)*7.85;
+				}
+				else if(unit<=90)
+				{
+					document.getElementById("BillAmount").innerHTML=471+(Number(unit)-60)*10;
+				}
+				else if(unit<=120)
+				{
+					document.getElementById("BillAmount").innerHTML=771+(Number(unit)-90)*27.75;
+				}
+				else 
+				{
+					document.getElementById("BillAmount").innerHTML=1603.50+(Number(unit)-120)*32+480;
+				}
+			}
+			</script>
+			
+		</body>
+</html>
+		
+
